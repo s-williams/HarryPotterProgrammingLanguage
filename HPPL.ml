@@ -48,6 +48,9 @@ let rec prefix aList aString = match aList , aString with
  * 
  * @param list the list you wish to print
  *)
+ let rec print_list = function 
+	[] -> ()
+	| e::l -> print_int e ; print_string " " ; print_list l
 
 (* Union two lists
  *
