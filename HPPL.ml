@@ -1,11 +1,14 @@
-
 (* Save things to type envirnoment *)
 
 (* Convert String to int -> Throw error if not valid string *)
 
 (* Convert String to list -> Throw error if not valid string *)
 
-(* Take a list and remove duplicates *)
+(* Take a list and remove duplicates
+ *
+ * @param list list you wish to remove duplicates from
+ * @return list list with duplicates removed
+ *)
 let remove_duplicates aList = remove_item [] aList;;
 
 (* Is a list longer than x 
