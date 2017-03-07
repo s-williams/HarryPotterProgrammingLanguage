@@ -82,9 +82,18 @@ let append l1 l2 =
  * @return list the intersection of the first list and the second list
  *)
  
-(* get x* up to k *)
+(* get x* up to k 
+ * TODO what is this
+ *
+ *
+ *)
 
-(* Remove item from list *)
+(* Remove duplicates from list 
+ *
+ * @param list left side of list (initially empty)
+ * @param list right side of list (initially the entire list)
+ * @return list list without duplicates
+ *)
 let rec remove_item listLeft listRight = match listRight with
 	[] -> listLeft
 	| (l :: ls) -> begin
