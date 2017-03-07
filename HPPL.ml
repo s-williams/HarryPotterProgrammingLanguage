@@ -18,7 +18,12 @@ let is_longer aList x =
 	if List.length aList > x then true
 	else false;;
 
-(* Return the k element of a list *)
+(* Return the k element of a list 
+ *
+ * @param list the list you want an element of
+ * @param integer the element index you want to retrieve
+ * @return integer  the kth element of the list
+ *)
 let rec at k = function
     | [] -> None
     | h :: t -> if k = 1 then Some h else at (k-1) t;;
