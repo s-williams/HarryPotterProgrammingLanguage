@@ -5,8 +5,8 @@ convert input 1 to list
 convert input 2 to int
 	Throw error if not int
 remove duplicates from list
+sort list into alphabetical order
 if longer than k =
 	get list of size k
 concatenate a with each item in list
-sort list into alphabetical order
 print

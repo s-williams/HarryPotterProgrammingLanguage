@@ -27,7 +27,11 @@ let rec prefix aList aString = match aList , aString with
 
 (* Print list *)
 
-(***)
+(* Union two lists *)
+
+(* Intersect two lists *)
+
+(* get x* up to k*)
 
 (* Remove item from list *)
 let rec remove_item listLeft listRight = match listRight with
