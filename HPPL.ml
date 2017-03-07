@@ -37,6 +37,11 @@ let rec insert_at x n = function
 
 (* Checks if two lists are the same *)
 
+(* Return the k element of a list *)
+let rec at k = function
+    | [] -> None
+    | h :: t -> if k = 1 then Some h else at (k-1) t;;
+
 (* Is a list longer than x *)
 let is_longer aList x =
 	if List.length aList > x then true
