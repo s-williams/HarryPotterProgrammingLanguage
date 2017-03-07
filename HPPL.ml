@@ -122,7 +122,12 @@ let rec suffix aList aString = match aList , aString with
 	[] , string -> []
 	| (l :: ls) , aString -> (l ^ aString) :: suffix ls aString;;
 
-(* TODO Add an element to the end of a list *)
+(* TODO Add an element to the end of a list 
+ *
+ * @param list the list you want to add to
+ * @param the element you wish to add
+ * @return list the list with the element added to the end
+ *)
 let addToList aList anElement = match aList, anElement with
 	[], anElement -> []
 	| ();;
