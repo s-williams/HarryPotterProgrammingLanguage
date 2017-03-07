@@ -7,7 +7,6 @@ convert input 2 to int
 remove duplicates from list
 if longer than k =
 	get list of size k
-Convert elemnets in list to string
 concatenate a with each item in list
 sort list into alphabetical order
 print
