@@ -72,8 +72,13 @@ let append l1 l2 =
     in
     loop [] l1 l2
 
-(* Intersect two lists *)
-
+(* Intersect two lists
+ *
+ * @param list the first list
+ * @param list the second list
+ * @return list the intersection of the first list and the second list
+ *)
+ 
 (* get x* up to k *)
 
 (* Remove item from list *)
@@ -83,7 +88,12 @@ let rec remove_item listLeft listRight = match listRight with
 		if is_member l listLeft then remove_item listLeft ls
 		else remove_item (l :: listLeft) listRight end;;
 
-(* Check if an elem is in a list *)
+(* Check if an elem is in a list  
+ *
+ * @param list the list you wish to check
+ * @param element something you wish to check is in a list
+ * @return boolean true if the element is in the list, false otherwise
+ *)
 let rec is_member n aList = match aList with
 	[] -> false
 	| (l :: ls) -> begin
