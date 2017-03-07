@@ -8,7 +8,12 @@
 (* Take a list and remove duplicates *)
 let remove_duplicates aList = remove_item [] aList;;
 
-(* Is a list longer than x *)
+(* Is a list longer than x 
+ * 
+ * @param list the list you wish to compare the length of
+ * @param integer a number, x, you wish to compare the length of the list to
+ * @return boolean true if list length is greater than x, false otherwise
+ *)
 let is_longer aList x =
 	if List.length aList > x then true
 	else false;;
@@ -18,20 +23,53 @@ let rec at k = function
     | [] -> None
     | h :: t -> if k = 1 then Some h else at (k-1) t;;
 	
-(* Take a list of string and concatenate each member with a given string at the front *)
+(* Take a list of string and concatenate each member with a given string at the front 
+ *
+ * @param list the list you wish to process
+ * @param string the string you wish to concatenate with every element
+ * @return list a list of strings with every element the same as the input list but concatenated with the string
+ *)
 let rec prefix aList aString = match aList , aString with
 	[] , string -> []
 	| (l :: ls) , aString -> (aString ^ l) :: prefix ls aString;;
 	
-(* Sort list into alphabetical order *)
+(* Sort list into alphabetical order 
+*
+* @param list the list you wish to sort
+* @return list the list sorted alphabetically
+*)
 
-(* Print list *)
+(* Print list 
+ * 
+ * @param list the list you wish to print
+ *)
 
-(* Union two lists *)
+(* Union two lists
+ *
+ * @param list the first list
+ * @param list the second list
+ * @return list the union of the first list and the second list
+ *)
+let union firstList secondList = remove_duplicates (append firstList secondList);;
+
+(* Append one list onto the end of another
+ * 
+ * @param list the first list
+ * @param list the second list
+ * @return list a single list composed of the first list followed by the second list
+ *)
+let append l1 l2 =
+  let rec loop acc l1 l2 =
+    match l1, l2 with
+    | [], [] -> List.rev acc
+    | [], h :: t -> loop (h :: acc) [] t
+    | h :: t, l -> loop (h :: acc) t l
+    in
+    loop [] l1 l2
 
 (* Intersect two lists *)
 
-(* get x* up to k*)
+(* get x* up to k *)
 
 (* Remove item from list *)
 let rec remove_item listLeft listRight = match listRight with
