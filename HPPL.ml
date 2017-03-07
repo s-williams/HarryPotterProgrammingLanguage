@@ -53,7 +53,7 @@ let rec prefix aList aString = match aList , aString with
 	| e::l -> print_int e ; print_string " " ; print_list l
 
 (* Union two lists
- *
+ * TODO: Test this
  * @param list the first list
  * @param list the second list
  * @return list the union of the first list and the second list
