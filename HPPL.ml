@@ -145,7 +145,12 @@ let rec insert_at x n = function
     | [] -> [x]
     | h :: t as l -> if n = 0 then x :: l else h :: insert_at x (n-1) t;;
 
-(* Return the first k elements of a list- fail if k is bigger than list *)
+(* Return the first k elements of a list- fail if k is bigger than list 
+ *
+ * @param integer a number, k, of first elements of a list
+ * @param list the list you want to process
+ * @return list the first k elements of the list
+ *)
 let rec get_list_of_size k xs = match xs with
 	| [] -> failwith "firstk"
 	| x::xs -> if k=1 then [x] else x::get_list_of_size (k-1) xs;;
