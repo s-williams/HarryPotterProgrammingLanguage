@@ -41,6 +41,11 @@ let rec insert_at x n = function
 let rec at k = function
     | [] -> None
     | h :: t -> if k = 1 then Some h else at (k-1) t;;
+	
+(* Return the first k elements of a list- fail if k is bigger than list *)
+let rec get_list_of_size k xs = match xs with
+	| [] -> failwith "firstk"
+	| x::xs -> if k=1 then [x] else x::get_list_of_size (k-1) xs;;
 
 (* Is a list longer than x *)
 let is_longer aList x =
