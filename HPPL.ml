@@ -100,7 +100,12 @@ let rec is_member n aList = match aList with
 		if l = n then true
 		else is_member n ls end;;
 	
-(* Take a list and concatenate each member with a given string at the end *)
+(* Take a list and concatenate each member with a given string at the end 
+ *
+ * @param list the list you wish to process
+ * @param string the string you wish to concatenate with every element
+ * @return list a list of strings with every element the same as the input list but concatenated with the string
+ *)
 let rec suffix aList aString = match aList , aString with
 	[] , string -> []
 	| (l :: ls) , aString -> (l ^ aString) :: suffix ls aString;;
@@ -110,7 +115,12 @@ let addToList aList anElement = match aList, anElement with
 	[], anElement -> []
 	| ();;
 
-(* Adds an element at a specific point in a list *)
+(* Insert an element at a given position into a list
+ * 
+ * @param what you want to insert 
+ * @param integer the index where you want to insert
+ * @param list the list you want to insert into
+ * @return list a new list with element added*)
 let rec insert_at x n = function
     | [] -> [x]
     | h :: t as l -> if n = 0 then x :: l else h :: insert_at x (n-1) t;;
