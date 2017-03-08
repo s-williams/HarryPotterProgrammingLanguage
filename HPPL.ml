@@ -1,15 +1,9 @@
 (* Save things to type envirnoment *)
 
 (* Convert String to int -> Throw error if not valid string *)
+let string_to_int aString = int_of_string aString;;
 
 (* Convert String to list -> Throw error if not valid string *)
-
-(* Take a list and remove duplicates
- *
- * @param list list you wish to remove duplicates from
- * @return list list with duplicates removed
- *)
-let remove_duplicates aList = remove_item [] aList;;
 
 (* Is a list longer than x 
  * 
@@ -55,14 +49,6 @@ let rec prefix aList aString = match aList , aString with
 	[] -> ()
 	| e::l -> print_int e ; print_string " " ; print_list l
 
-(* Union two lists
- * TODO: Test this
- * @param list the first list
- * @param list the second list
- * @return list the union of the first list and the second list
- *)
-let union firstList secondList = remove_duplicates (append firstList secondList);;
-
 (* Append one list onto the end of another
  * 
  * @param list the first list
@@ -90,6 +76,18 @@ let append l1 l2 =
  *
  *
  *)
+ 
+(* Check if an elem is in a list  
+ *
+ * @param list the list you wish to check
+ * @param element something you wish to check is in a list
+ * @return boolean true if the element is in the list, false otherwise
+ *)
+let rec is_member n aList = match aList with
+	[] -> false
+	| (l :: ls) -> begin
+		if l = n then true
+		else is_member n ls end;;
 
 (* Remove duplicates from list 
  *
@@ -102,18 +100,6 @@ let rec remove_item listLeft listRight = match listRight with
 	| (l :: ls) -> begin
 		if is_member l listLeft then remove_item listLeft ls
 		else remove_item (l :: listLeft) listRight end;;
-
-(* Check if an elem is in a list  
- *
- * @param list the list you wish to check
- * @param element something you wish to check is in a list
- * @return boolean true if the element is in the list, false otherwise
- *)
-let rec is_member n aList = match aList with
-	[] -> false
-	| (l :: ls) -> begin
-		if l = n then true
-		else is_member n ls end;;
 	
 (* Take a list and concatenate each member with a given string at the end 
  *
@@ -131,9 +117,7 @@ let rec suffix aList aString = match aList , aString with
  * @param the element you wish to add
  * @return list the list with the element added to the end
  *)
-let addToList aList anElement = match aList, anElement with
-	[], anElement -> []
-	| ();;
+let addToList aList anElement = aList @ [anElement];;
 
 (* Insert an element at a given position into a list
  * 
@@ -154,3 +138,18 @@ let rec insert_at x n = function
 let rec get_list_of_size k xs = match xs with
 	| [] -> failwith "firstk"
 	| x::xs -> if k=1 then [x] else x::get_list_of_size (k-1) xs;;
+
+(* Take a list and remove duplicates
+ *
+ * @param list list you wish to remove duplicates from
+ * @return list list with duplicates removed
+ *)
+let remove_duplicates aList = remove_item [] aList;;
+
+(* Union two lists
+ * TODO: Test this
+ * @param list the first list
+ * @param list the second list
+ * @return list the union of the first list and the second list
+ *)
+let union firstList secondList = remove_duplicates (append firstList secondList);;
