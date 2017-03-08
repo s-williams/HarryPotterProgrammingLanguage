@@ -13,9 +13,12 @@ rule lexer_main = parse
 	| "colloportus"		{ RBRACE }
 	| "petrificus"		{ EQUAL }
 	| "repairo"			{ ORDER }
-	| "sonorus"			{ PRINT }
 	| "sectumsepris"	{ ERROR }
 	| "leviosa"			{ FOR }
+	| "sonorus"			{ PRINT }
+	| "reducto"			{ GETLISTOFSIZE }
+	| "intersectify"	{ INTERSECT }
+	| "unionify"		{ UNION }
     | '*'      { TIMES }
     | '/'      { DIV }
     | '('      { LPAREN }
