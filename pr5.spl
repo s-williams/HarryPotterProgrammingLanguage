@@ -1,0 +1,10 @@
+take input 1
+take input 2
+convert input 1 to list
+	Throw error if not list
+convert input 2 to int
+	Throw error if not int
+remove duplicates from list
+sort list 1 into alphabetical order
+get list, list 2, of size k composed of every element in list 1 concatenated with all words of length 2 over the letters a, b and c
+print list 2
