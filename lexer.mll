@@ -7,7 +7,6 @@ rule lexer_main = parse
       [' ' '\t']     { lexer_main lexbuf }     (* skip blanks *)
     | ['\n' ]  { EOL }
     | ['0'-'9']+ as lxm { INT(int_of_string lxm) }
-    | "accio"			{ FUNCTION }
     | "alohomora"       { LBRACE }
 	| "avadakadavra"	{ RETURN }
 	| "colloportus"		{ RBRACE }
@@ -15,10 +14,13 @@ rule lexer_main = parse
 	| "repairo"			{ ORDER }
 	| "sectumsepris"	{ ERROR }
 	| "leviosa"			{ FOR }
-	| "sonorus"			{ PRINT }
+	| "sonorus"			{ PRINTLIST }
 	| "reducto"			{ GETLISTOFSIZE }
 	| "intersectify"	{ INTERSECT }
 	| "unionify"		{ UNION }
+	| "serpensortia"	{ REMOVEDUPLICATES }
+	| "diffindo"		{ GETLISTOFSIZE }
+	| "accio"			{ SORTALPHABETICALLY}
     | '*'      { TIMES }
     | '/'      { DIV }
     | '('      { LPAREN }
