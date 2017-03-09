@@ -18,7 +18,7 @@ rule lexer_main = parse
 	| "reducto"			{ GETLISTOFSIZE }
 	| "intersectify"	{ INTERSECT }
 	| "unionify"		{ UNION }
-	| "serpensortia"	{ REMOVEDUPLICATES }
+	| "scourgify"	{ REMOVEDUPLICATES }
 	| "diffindo"		{ GETLISTOFSIZE }
 	| "accio"			{ SORTALPHABETICALLY}
 	| "gemino"			{ APPEND }
