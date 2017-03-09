@@ -21,6 +21,7 @@ rule lexer_main = parse
 	| "serpensortia"	{ REMOVEDUPLICATES }
 	| "diffindo"		{ GETLISTOFSIZE }
 	| "accio"			{ SORTALPHABETICALLY}
+	| "gemino"			{ APPEND }
     | '*'      { TIMES }
     | '/'      { DIV }
     | '('      { LPAREN }
